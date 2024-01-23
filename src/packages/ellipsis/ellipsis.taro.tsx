@@ -104,8 +104,8 @@ export const Ellipsis: FunctionComponent<
 
   // 获取省略号宽度
   const getSymbolInfo = async () => {
-    const refe = await getRectByTaro(symbolContain?.current)
-    symbolTextWidth = refe.width
+    const refe = await getRectByTaro(symbolContain.current)
+    symbolTextWidth = refe?.width
       ? Math.ceil(refe.width)
       : Math.ceil(widthBase[0] * 0.7921)
   }
@@ -170,7 +170,7 @@ export const Ellipsis: FunctionComponent<
   const calcEllipse = async () => {
     const refe = await getRectByTaro(rootContain.current)
 
-    if (refe.height <= maxHeight.current) {
+    if (refe?.height <= maxHeight.current) {
       setExceeded(false)
     } else {
       const rowNum = Math.floor(
